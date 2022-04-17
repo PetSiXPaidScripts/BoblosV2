@@ -1,0 +1,22 @@
+while true do
+    wait(0.1)
+_G.Yes = true 
+while _G.Yes do
+function tickets()
+
+local args = {
+    [1] = "LotteryTickets"
+}
+
+game:GetService("ReplicatedStorage").RSPackage.Events.GeneralFunction:InvokeServer(unpack(args))
+
+local args = {
+    [1] = "LotteryRandomDraw"
+}
+
+game:GetService("ReplicatedStorage").RSPackage.Events.GeneralFunction:InvokeServer(unpack(args))
+end
+tickets()
+game:GetService("ReplicatedStorage").RSPackage.Events.GeneralEvent:FireServer("SpinFinished")
+end
+end
